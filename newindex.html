@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "inter";
-            text-decoration: none;
-            list-style: none;
-            color: #fff;
-        }
 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
         html,
         body {
             height: 100%;
@@ -27,13 +12,19 @@
             height: fit-content;
             width: 100%;
             background-color: black;
-            padding: 0 50px;
+            overflow-x: hidden;
+
         }
 
-        .footer-top {
-            display: flex;
-            align-items: start;
-            justify-content: space-between;
+        .footer-brand {
+            width: fit-content;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .footer-brand img {
+            max-width: 200px;
+            margin-bottom: 20px;
         }
 
         .subscribe {
@@ -46,6 +37,7 @@
             font-weight: 600;
             line-height: 130%;
             margin-bottom: 10px;
+            color: #fff
         }
 
         .subscribe p,
@@ -171,7 +163,7 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 130%;
-
+            color: white
         }
 
         .footer-column ul li:hover {
@@ -218,6 +210,46 @@
             color: #ccc;
         }
 
+        hr {
+            margin: 20px 0;
+            border: 1px solid #666;
+            display: none;
+        }
+
+
+
+        .feautres {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .feautres p {
+            min-width: 135px;
+            margin-left: 18px;
+            color: #fff;
+        }
+
+        .feautres button {
+            display: none;
+        }
+
+        .slider-content {
+            border-bottom: 1px solid #666;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slider-content>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .slider-content img {
+            max-width: 64px;
+        }
 
         /* Social icons statrs here */
 
@@ -229,6 +261,7 @@
         .social-icons h3 {
             color: #666666;
             font-size: 16px;
+            font-weight: 600;
         }
 
         .social-icons i {
@@ -260,25 +293,75 @@
 
 
         .second-footer {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 450px;
+            margin-bottom: 20px;
         }
 
         .copyright-footer {
-            height: 130px;
+            color: #fff;
+            height: 70px;
             width: 100%;
             background: #000;
-            border-top: 1px solid #fff;
+            border-top: 1px solid #666;
             margin-top: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        .footer-container,
+        .copyright-footer {
+            /* width: 75%; */
+            max-width: 1400px;
+            margin: auto;
+        }
+
 
         /* MEDIA QUERY STARTS HERE */
+
+        @media only screen and (max-width: 768px) {
+
+            html,
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .second-footer {
+                display: block;
+                padding: 0 20px;
+            }
+
+            .social-icons .sc {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .slider-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns */
+                grid-template-rows: repeat(2, auto);
+                /* 2 rows */
+                gap: 10px;
+            }
+
+            .slider-content>div {
+                justify-self: start;
+            }
+
+            .slider-content>div:nth-child(2),
+            .slider-content>div:nth-child(4) {
+                justify-self: right;
+            }
+        }
+
 
         @media (max-width: 768px) {
 
@@ -286,6 +369,8 @@
             .footer-middle,
             .footer-bottom {
                 flex-direction: column;
+                padding: 0 20px;
+                align-items: start;
             }
 
             .footer-column {
@@ -299,7 +384,7 @@
             }
 
             .subscribe form {
-                width: 145%;
+                width: 360px;
             }
 
             .subscribe h2,
@@ -318,8 +403,8 @@
             }
 
             /* .footer-column ul {
-        display: none;
-    } */
+          display: none;
+      } */
 
             .footer-column h3 {
                 cursor: pointer;
@@ -339,9 +424,9 @@
             }
 
             /* .footer-column h3::after {
-        content: "+";
-        float: right;
-    } */
+          content: "+";
+          float: right;
+      } */
 
             .footer-column h3.active::after {
                 content: "-";
@@ -350,6 +435,32 @@
             .second-fotter {
                 display: none;
             }
+
+            .feautres {
+                position: relative;
+                width: 100%;
+                max-width: 1000px;
+                /* Adjust as needed */
+                margin: auto;
+                overflow: hidden;
+            }
+
+            .slider-content {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+                width: 100%;
+            }
+
+            .slider-content>div {
+                flex: 1 0 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+
+
         }
     </style>
     <title>Document</title>
@@ -358,30 +469,51 @@
 <body>
     <footer>
         <div class="footer-container">
+            <div class="feautres">
+                <div class="slider-content">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/icons8-free-shipping-64.png?v=1723177465"
+                            alt="">
+                        <p>Free shipping</p>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/icons8-satisfied-64.png?v=1723177465"
+                            alt="">
+                        <p>Satisfied or refunded</p>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/icons8-shipping-100.png?v=1723177465"
+                            alt="">
+                        <p>Shipped 1M+ orders</p>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/icons8-secure-payments-68.png?v=1723177465"
+                            alt="">
+                        <p>Secure payments</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
             <div class="footer-top">
                 <div class="footer-brand">
-                    <h1>PERFUME.BOX</h1>
+                    <img src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/jpeg-optimizer_Perfumebox_-_W.png?v=1723177242"
+                        alt="PerfumeBox logo">
                 </div>
-                <div class="subscribe">
-                    <h2>Subscribe for exclusive offers</h2>
-                    <form class="sub-form" action="#">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <p>By subscribing you agree with our <a href="https://theperfumebox.com/pages/privacy-cookies"
-                            target="_blank">Privacy
-                            Policy</a></p>
-                </div>
+
             </div>
             <div class="footer-middle">
                 <div class="footer-column">
                     <h3>Shop By</h3>
                     <ul>
                         <li><a href="https://theperfumebox.com/collections/new-arrivals">New Collection</a></li>
-                        <li><a href="https://theperfumebox.com/collections/default-category-womens-fragrances">Women's
-                                Fragrances</a></li>
-                        <li><a href="https://theperfumebox.com/collections/default-category-mens-fragrances">Men's
-                                Fragrances</a></li>
+                        <li>
+                            <a href="https://theperfumebox.com/collections/default-category-womens-fragrances">Women's
+                                Fragrances</a>
+                        </li>
+                        <li>
+                            <a href="https://theperfumebox.com/collections/default-category-mens-fragrances">Men's
+                                Fragrances</a>
+                        </li>
                         <li><a href="https://theperfumebox.com/pages/brands">Brand</a></li>
                         <li><a href="https://theperfumebox.com/collections/bath-body">Men's Bath & Body</a></li>
                         <li><a href="https://theperfumebox.com/collections/womens-bath-body">Women's Bath & Body</a>
@@ -414,7 +546,6 @@
                         <li><a href="https://af.uppromote.com/theperfumebox/register?p=156418">Affiliate Program</a>
                         </li>
                         <li><a href="https://theperfumebox.com/apps/parcelpanel">Track Your Order</a></li>
-
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -427,21 +558,19 @@
                     </ul>
                 </div>
                 <!-- Start of Judge.me code -->
-                <div style='clear:both'></div>
-                <div style='text-align: center'>
-                    <a class='jdgm-verified-count-badget' href='javascript:void(0)'>
+                <div style="clear:both"></div>
+                <div style="text-align: center">
+                    <a class="jdgm-verified-count-badget" href="javascript:void(0)">
                         {{ shop.metafields.judgeme.verified_badge }}
                     </a>
                 </div>
                 <!-- End of Judge.me code -->
-
-
             </div>
             <!-- FOOTER MIDDLE ENDS HERE -->
 
             <div class="second-footer">
                 <div class="social-icons">
-                    <h3> Follow Us</h3>
+                    <h3>Follow Us</h3>
                     <div class="sc">
                         <a href="https://www.facebook.com/The-Perfume-Box-532389297290847/" target="_blank"><i
                                 class="ri-facebook-fill"></i></a>
@@ -453,10 +582,21 @@
                     <h2>Download our App</h2>
                     <a href="https://www.apple.com/in/app-store/" target="_blank"><img
                             src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/apple-white.png?v=1722521837"
-                            alt="App Store" /></a>
+                            alt="App Store"></a>
                     <a href="https://play.google.com/" target="_blank"><img
                             src="https://cdn.shopify.com/s/files/1/0221/4038/7400/files/google-black.png?v=1722521837"
-                            alt="Google Play" /></a>
+                            alt="Google Play"></a>
+                </div>
+                <div class="subscribe">
+                    <h2>Subscribe for exclusive offers</h2>
+                    <form class="sub-form" action="#">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <p>
+                        By subscribing you agree with our
+                        <a href="https://theperfumebox.com/pages/privacy-cookies" target="_blank">Privacy Policy</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -464,6 +604,54 @@
             <p>2024 PerfumeBox.com. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <script>
+        let autoSlide; // Variable to store the interval ID
+
+        function initializeSlider() {
+            let slideIndex = 0;
+
+            function showSlides() {
+                const slides = document.querySelectorAll('.slider-content > div');
+                const totalSlides = slides.length;
+
+                if (slideIndex >= totalSlides) { slideIndex = 0; }
+                if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+
+                const offset = -slideIndex * 100; // Calculate the offset for sliding
+                document.querySelector('.slider-content').style.transform = `translateX(${offset}%)`;
+            }
+
+            function nextSlide() {
+                slideIndex++;
+                showSlides();
+            }
+
+            showSlides(); // Initial call to show the first slide
+            autoSlide = setInterval(nextSlide, 8000); // Auto slide every 5 seconds
+        }
+
+        function setupSlider() {
+            const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+            function handleMediaChange(event) {
+                if (event.matches) {
+                    // If media query matches, initialize the slider
+                    initializeSlider();
+                } else {
+                    // Reset the slider position and clear interval if not matching
+                    document.querySelector('.slider-content').style.transform = 'translateX(0%)';
+                    clearInterval(autoSlide); // Clear the auto slide interval
+                }
+            }
+
+            handleMediaChange(mediaQuery); // Initial check
+
+            mediaQuery.addEventListener('change', handleMediaChange); // Listen for changes
+        }
+
+        setupSlider(); // Run the setup function
+    </script>
 </body>
 
 </html>
